@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS transport;
 USE transport;
 
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS Bicycle, Motorcycle, Car, Vehicle;
+DROP TABLE IF EXISTS Vehicle,  Car, Motorcycle, Bicycle;
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- Создание таблицы Vehicle

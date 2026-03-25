@@ -4,9 +4,9 @@ USE transport;
 SELECT
 	v.maker, v.model 
 FROM 
-	vehicle v 
+	Vehicle v 
 JOIN 
-	motorcycle m ON v.model = m.model
+	Motorcycle m ON v.model = m.model
 WHERE 
 	m.horsepower > 150 
 	AND m.price < 20000 
