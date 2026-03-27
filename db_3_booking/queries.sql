@@ -17,7 +17,10 @@ JOIN
 JOIN
 	Hotel h ON r.ID_hotel = h.ID_hotel
 GROUP BY
-	c.ID_customer
+	c.ID_customer,
+	c.name,
+	c.email,
+	c.phone
 HAVING
 	COUNT(b.ID_customer) > 2
 	AND
@@ -42,7 +45,8 @@ WITH multi_hotel_customers AS (
     JOIN
     	Hotel h ON h.ID_hotel = r.ID_hotel
     GROUP BY
-    	c.ID_customer
+    	c.ID_customer,
+    	c.name
     HAVING 
     	COUNT(b.ID_customer) > 2
        	AND
@@ -61,7 +65,8 @@ high_spenders AS (
     JOIN
     	Room r ON r.ID_room = b.ID_room
     GROUP BY
-    	c.ID_customer
+    	c.ID_customer,
+        c.name
     HAVING
     	SUM(DATEDIFF(b.check_out_date, b.check_in_date) * r.price) > 500
 )
@@ -94,7 +99,8 @@ WITH hotel_categories AS (
     JOIN
     	Room r ON r.ID_hotel = h.ID_hotel
     GROUP BY
-    	h.ID_hotel
+    	h.ID_hotel,
+    	hotel_name
 ),
 customer_hotel_data AS (
     SELECT
@@ -124,7 +130,8 @@ customer_preferences AS (
     FROM
     	customer_hotel_data
     GROUP BY
-    	ID_customer
+    	ID_customer,
+    	name
 )
 SELECT
     ID_customer,
