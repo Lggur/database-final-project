@@ -1,6 +1,7 @@
 USE organization_structure;
 
 -- Задача 1
+SELECT 'Дерево подчиненных Ивана Иванова (с проектами и задачами)' AS 'Задача 1';
 WITH RECURSIVE employee_hierarchy AS (
     SELECT
         EmployeeID,
@@ -54,6 +55,7 @@ ORDER BY
 	eh.Name;
 	
 -- Задача 2
+SELECT 'Дерево сотрудников с статистикой задач и прямых подчиненных' AS 'Задача 2';    
 WITH RECURSIVE employee_hierarchy AS (
     SELECT
         EmployeeID,
@@ -124,6 +126,7 @@ ORDER BY
 	eh.Name;
 
 -- Задача 3
+SELECT 'Поиск менеджерской структуры и вложенных подчиненных' AS 'Задача 3';
 WITH RECURSIVE employee_hierarchy AS (
     SELECT
         e.EmployeeID,

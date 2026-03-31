@@ -1,6 +1,7 @@
 USE booking;
 
 -- Задача 1
+SELECT 'Лояльные клиенты с более 2 отелей, список гостиниц и ср. длительность' AS 'Задача 1';
 SELECT 
 	c.name,
 	c.email,
@@ -29,6 +30,7 @@ ORDER BY
 	total_bookings DESC;
 	
 -- Задача 2
+SELECT 'Активные клиенты с тратами более $500' AS 'Задача 2';
 WITH multi_hotel_customers AS (
     SELECT
         c.ID_customer,
@@ -84,6 +86,7 @@ ORDER BY
 	mhc.total_spent;
 
 -- Задача 3
+SELECT 'Сегментация клиентов по предпочтениям (Дешевый/Средний/Дорогой)' AS 'Задача 3';
 WITH hotel_categories AS (
     SELECT
         h.ID_hotel,

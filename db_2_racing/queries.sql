@@ -1,6 +1,7 @@
 USE racing;
 
 -- Задача 1
+SELECT 'Лидеры классов по средней позиции в гонках' AS 'Задача 1';
 WITH cars_stats AS (
 	SELECT
 		c.name AS car_name,
@@ -38,6 +39,7 @@ ORDER BY
 	cs.average_position;
 
 -- Задача 2
+SELECT 'Абсолютный чемпион среди всех автомобилей (MIN средняя позиция)' AS 'Задача 2';
 SELECT
 	c.name AS car_name,
 	c.class AS car_class,
@@ -58,6 +60,7 @@ ORDER BY
 LIMIT 1;
 
 -- Задача 3
+SELECT 'Автомобили из классов-победителей с общим зачетом гонок' AS 'Задача 3';
 WITH class_average_position AS (
     SELECT
         c.class,
@@ -123,6 +126,7 @@ ORDER BY
     average_position;
 
 -- Задача 4
+SELECT 'Автомобили, превзошедшие средний результат своего класса' AS 'Задача 4';
 WITH cars_stats AS (
 	SELECT
 		c.name AS car_name,

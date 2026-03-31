@@ -1,6 +1,7 @@
 USE transport;
 
 -- Задача 1
+SELECT 'Мощные спортбайки (>150 л.с.) дешевле $20,000' AS 'Задача 1';
 SELECT
 	v.maker, v.model 
 FROM 
@@ -15,6 +16,7 @@ ORDER BY
 	m.horsepower DESC;
 
 -- Задача 2
+SELECT 'Анализ моделей всех типов ТС по заданным критериям' AS 'Задача 2';
 (SELECT 
     v.maker, 
     v.model, 
