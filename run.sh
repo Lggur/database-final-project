@@ -18,7 +18,7 @@ user=$MYSQL_USER
 password="$MYSQL_PASSWORD"
 EOF
 
-# Удаление временного файла при выходе (в т.ч. при ошибке)
+# Удаление временного файла при выходе или ошибке
 trap 'rm -f "$MY_INI"' EXIT
 
 MYSQL="mysql --defaults-extra-file=$MY_INI -t"
